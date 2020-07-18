@@ -1,0 +1,2 @@
+<!--pages/show/show.wxml-->
+<view> {{story.name}}: {{story.content}}</view>
