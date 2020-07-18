@@ -76,6 +76,13 @@
 					"id": -1,
 					"name": "index",
 					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "write your story",
+					"pathName": "pages/story/story",
 					"scene": null
 				}
 			]

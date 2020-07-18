@@ -1,2 +1,8 @@
 <!--pages/show/show.wxml-->
 <view> {{story.name}}: {{story.content}}</view>
+
+<view wx:for="{{comments}}" data-id="{{item.id}}"> 
+<view data-id="{{item.id}}" bindtap="deleteComment">X</view>
+{{item.name}}: {{item.content}}
+<view data-id="{{item.id}}" data-votes="{{item.votes}}" bindtap="voteComment" > votes: {{item.votes}} </view>
+</view>
