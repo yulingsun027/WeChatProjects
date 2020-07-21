@@ -17,28 +17,37 @@ Page({
     })
   },
   showStory(event){
+    console.log('e', event)
     let data = event.currentTarget.dataset;
     let id = data.id;
 
     wx.navigateTo({
-      url: `/pages/show/show?id=${id}`
+      url: `/pages/detail/detail?id=${id}`
     })
   },
 
   onLoad: function () {
-    let page = this;
-    let request = {
-      url: 'https://cloud.minapp.com/oserve/v1/table/84988/record/',
-      method: 'GET',
-      header: {'Authorization':'Bearer 7a82a2b76c38e309ae34ff3c83c87f8409748b0e'},
-      success(res) {
-        console.log(res)
-        page.setData({
-          stories: res.data.objects
-        })
-      }
-    };
-    wx.request(request);
+    // let page = this;
+    // let request = {
+    //   url: 'https://cloud.minapp.com/oserve/v1/table/84988/record/',
+    //   method: 'GET',
+    //   header: {'Authorization':'Bearer 7a82a2b76c38e309ae34ff3c83c87f8409748b0e'},
+    //   success(res) {
+    //     console.log(res)
+    //     page.setData({
+    //       stories: res.data.objects
+    //     })
+    //   }
+    // };
+    // wx.request(request);
+    let tableName = 'story';
+    let Story = new wx.BaaS.TableObject(tableName);
+    Story.find().then((res) => {
+      console.log('res', res);
+      this.setData({
+        stories: res.data.objects
+      })
+    })
   },
   
 })

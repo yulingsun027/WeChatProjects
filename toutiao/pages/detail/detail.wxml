@@ -1,0 +1,6 @@
+<!--pages/detail/detail.wxml-->
+<view data-id="item.id"> {{story.title}}</view>
+<view wx:for="{{comments}}" data-id="{{item.id}}"> 
+{{item.name}}: {{item.content}}
+</view>
+

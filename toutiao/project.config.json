@@ -83,6 +83,14 @@
 					"id": -1,
 					"name": "write your story",
 					"pathName": "pages/story/story",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": "",
 					"scene": null
 				}
 			]
