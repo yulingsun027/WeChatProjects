@@ -1,0 +1,6 @@
+<!--pages/restautant/detail.wxml-->
+<view data-id="item.id"> {{restaurant.name}}</view>
+
+<view wx:for="{{comments}}" data-id="{{item.id}}"> 
+{{item.content}}
+</view> 

@@ -1,0 +1,5 @@
+<!--pages/restautant/index.wxml-->
+<text>Here are some restaurants you can try!</text>
+
+<view wx:for="{{restaurant}}" data-id="{{item.id}}" bindtap="showDetail"> 
+{{item.name}}: {{item.cuisine}}</view>

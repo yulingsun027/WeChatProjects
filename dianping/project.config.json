@@ -27,13 +27,13 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
 	"appid": "wx86208abf57e7e999",
-	"projectname": "toutiao",
+	"projectname": "dianping",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -67,29 +67,22 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "show one story",
-					"pathName": "pages/show/show",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "index",
+					"name": "lp index",
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "write your story",
-					"pathName": "pages/story/story",
+					"id": 1,
+					"name": "restaurant detail",
+					"pathName": "pages/restaurant/detail",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 3,
-					"name": "detail",
-					"pathName": "pages/detail/detail",
+					"id": -1,
+					"name": "restaurants list",
+					"pathName": "pages/restaurant/index",
 					"query": "",
 					"scene": null
 				}
