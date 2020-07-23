@@ -8,4 +8,5 @@ App({
   globalData: {
     userInfo: null
   }
+  
 })

@@ -4,3 +4,5 @@
 <view wx:for="{{comments}}" data-id="{{item.id}}"> 
 {{item.content}}
 </view> 
+
+<van-button type="primary">check me!</van-button>
