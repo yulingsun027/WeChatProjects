@@ -10,6 +10,7 @@ Page({
   data: {
       restaurant:{},
       comments:[],
+      restaurantId: 0,
       // currentUser:null
   },
 
@@ -22,18 +23,27 @@ Page({
     wx.BaaS.auth.loginWithWechat(data).then(user =>{
       console.log('user', user);
       app.globalData.userInfo = user;
+      wx.setStorageSync('userInfo', user);
       this.setData({
         currentUser: user
       })
     })
+    wx.navigateTo({
+      url: '/pages/comment/comment',
+    })
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
+    this.setData({
+      restaurantId: options.id,
+    })
+  },
+  onShow: function (options) {
     console.log('userData', app.globalData.userInfo)
     let tableName1 = 'restaurant';
     let tableName2 = 'comments';
     let Restaurant = new wx.BaaS.TableObject(tableName1);
     let Comments = new wx.BaaS.TableObject(tableName2);
-    let recordID = options.id;
+    let recordID = this.data.restaurantId;
     Restaurant.get(recordID).then((res)=>{
       console.log('res detail', res);
       this.setData({restaurant: res.data});

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/restaurant/index",
     "pages/restaurant/detail",
-    "pages/profile/index"
+    "pages/profile/index",
+    "pages/comment/comment"
   ],
   "window": {
     "backgroundTextStyle": "light",

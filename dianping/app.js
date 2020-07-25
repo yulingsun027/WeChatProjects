@@ -10,6 +10,7 @@ App({
     //wechat login
     wx.BaaS.auth.loginWithWechat().then(user => {
       this.globalData.userInfo = user;
+      wx.setStorageSync('userInfo', user);
       console.log('logged in from js',user)
     }, err => {
       console.log('fail login')
@@ -17,7 +18,7 @@ App({
 
   },
   globalData: {
-    userInfo: null
+    userInfo: wx.setStorageSync('userInfo') || null
   }
   
 })

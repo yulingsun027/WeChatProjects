@@ -4,7 +4,7 @@
 <h1>Here are some restaurants you can try!</h1>
 
 <view class="container">
-<view wx:for="{{restaurant}}" data-id="{{item.id}}" bindtap="showDetail"> 
+<view wx:for="{{restaurant}}" wx:key="id" data-id="{{item.id}}" bindtap="showDetail"> 
 {{item.name}}: {{item.cuisine}}</view>
 </view>
 
