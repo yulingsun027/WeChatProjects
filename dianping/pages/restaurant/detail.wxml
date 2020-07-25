@@ -5,4 +5,4 @@
 {{item.content}}
 </view> 
 
-<van-button type="primary">check me!</van-button>
+<van-button type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login and write a comment!</van-button>

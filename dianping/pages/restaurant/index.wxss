@@ -1,1 +1,8 @@
 /* pages/restautant/index.wxss */
+.banner {
+  padding-top:20px; 
+  height: 100vh;
+  background-color: lightblue;
+  /* background-image: url(/pages/imgs/photography-of-tomatoes-near-basil-leaves-1391487.jpg); */
+  /* display: contain */
+}

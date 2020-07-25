@@ -1,18 +1,34 @@
 // pages/restautant/detail.js
-Page({
 
+const app = getApp();
+
+Page({
+  
   /**
    * Page initial data
    */
   data: {
       restaurant:{},
-      comments:[]
+      comments:[],
+      // currentUser:null
   },
 
   /**
    * Lifecycle function--Called when page load
    */
+ 
+
+  userInfoHandler: function(data){
+    wx.BaaS.auth.loginWithWechat(data).then(user =>{
+      console.log('user', user);
+      app.globalData.userInfo = user;
+      this.setData({
+        currentUser: user
+      })
+    })
+  },
   onLoad: function (options) {
+    console.log('userData', app.globalData.userInfo)
     let tableName1 = 'restaurant';
     let tableName2 = 'comments';
     let Restaurant = new wx.BaaS.TableObject(tableName1);

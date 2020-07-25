@@ -1,5 +1,11 @@
 <!--pages/restautant/index.wxml-->
-<text>Here are some restaurants you can try!</text>
+<view class="banner"> 
 
+<h1>Here are some restaurants you can try!</h1>
+
+<view class="container">
 <view wx:for="{{restaurant}}" data-id="{{item.id}}" bindtap="showDetail"> 
 {{item.name}}: {{item.cuisine}}</view>
+</view>
+
+</view>
