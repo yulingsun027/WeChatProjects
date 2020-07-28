@@ -8,4 +8,7 @@
 {{item.name}}: {{item.cuisine}}</view>
 </view>
 
+<view class="btn-area">
+    <button formType="submit" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login and explore!</button>
+  </view>
 </view>

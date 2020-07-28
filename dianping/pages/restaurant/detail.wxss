@@ -1,1 +1,26 @@
 /* pages/restautant/detail.wxss */
+.meals {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.meals .meal{
+display: flex;
+align-items: center;
+justify-content: center;
+width:95%
+}
+
+.meal .left {
+width: 75%;
+}
+
+.meal .right {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 25%;
+  }

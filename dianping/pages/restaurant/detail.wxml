@@ -1,8 +1,43 @@
 <!--pages/restautant/detail.wxml-->
 <view data-id="item.id"> {{restaurant.name}}</view>
-
+<view class="meals">Restaurant menu!
+<view class="meal" wx:for="{{meals}}">
+  <view class="meal-left">
+    <view class="name">{{item.name}}</view>
+    <view class="des">{{item.description}}</view>
+  </view>
+  <view class="meal-right">
+    <view class="price">{{item.price}}</view>
+    <button size="mini" class="primary" data-id="{{item.id}}" bindtap="createOrder">order now</button>
+  </view>
+</view>
+</view>
 <view wx:for="{{comments}}" data-id="{{item.id}}"> 
 {{item.content}}
 </view> 
 
-<van-button type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login and write a comment!</van-button>
+<!-- <van-button type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login and write a comment!</van-button> -->
+
+<form bindsubmit="createComment" bindreset="formReset" wx:if="{{currentUser}}">
+  
+  <view class="comment">Input your ratings and comments here!</view>
+
+  <view class="section">
+    <!-- <view class="section__title">Your rating</view> -->
+    <picker mode="selector" range="{{ratings}}" bindchange="onRate">Choose a rating</picker>
+    <view>Your rating: {{rating}}</view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">Your comment</view>
+    <textarea name="content" placeholder="please write your comment here" ></textarea> 
+  </view>
+
+<view class="btn-area">
+    <button formType="submit">Submit</button>
+</view>
+</form>
+<view wx:else>
+<button open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Please login to review
+</button>
+</view>

@@ -11,7 +11,7 @@ Page({
     rating: 'none',
     numberRating: 0,
     content:'',
-    restaurant:{}
+    restaurant_id:''
   },
 
   /**
@@ -35,7 +35,7 @@ Page({
         // review's content and rating
         rating: this.data.numberRating,
         content:this.data.content,
-        restaurant_id: this.data.restaurant.id,
+        restaurant_id: this.data.restaurant_id,
 
     };
     comment.set(data).save().then(res => {
