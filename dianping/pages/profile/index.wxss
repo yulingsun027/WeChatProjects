@@ -1,1 +1,35 @@
 /* pages/profile/index.wxss */
+.h1 {
+font-size: large;
+font-weight: 300;
+font-style: italic;
+}
+
+.user-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.welcome {
+  color: navy;
+  font-size: large;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nickname{
+  padding-top: 25rpx;
+  color:palevioletred;
+  font-size: medium;
+
+
+}
+
+.avatar {
+  height: 200rpx;
+  width:200rpx;
+  border-radius: 50%;
+}

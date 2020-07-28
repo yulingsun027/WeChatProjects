@@ -1,0 +1,27 @@
+<!--pages/products/products.wxml-->
+<view class="h1">Here are our star products</view>
+
+<view class="container">
+<view wx:for="{{products}}" wx:key="id" data-id="{{item.id}}" bindtap="showDetail"> 
+<view class="product-card">
+<view class="left">
+  <view class="name">{{item.name}}</view>
+  <view class="price">{{item.price}}$USD</view>
+</view>
+<view class="right">
+  <view class="points" item-id="item.id">{{item.points}} points</view>
+  <view class="btn"><button bindtap="createOrder">order</button></view>
+</view>
+</view>
+
+<!-- <van-card
+  title="{{item.name}}"
+  price="{{item.price}}"
+  desc="{{item.points}} points"
+>
+  <view slot="footer">
+    <van-button size="mini" bindtap="orderProduct">order</van-button>
+  </view>
+</van-card>-->
+</view>
+ </view>

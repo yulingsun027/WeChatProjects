@@ -1,35 +1,44 @@
-// pages/profile/index.js
-let app = getApp();
-
+// pages/products/products.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    currentUser:{}
+    products:[]
   },
 
   /**
    * Lifecycle function--Called when page load
-   */
-  userInfoHandler: function(data){
-    wx.BaaS.auth.loginWithWechat(data).then(user =>{
-      console.log('user', user);
-      app.globalData.userInfo = user;
-      wx.setStorageSync('userInfo', user);
-      this.setData({
-        currentUser: user
+   **/
+
+  createOrder: function (e){
+    const productID = e.currentTarget.dataset.id;
+    let DiorOrders = new wx.BaaS.TableObject('diorOrder');
+    let order = DiorOrders.create();
+    const orderData = {
+      quantity: 1,
+      product_id: productID,
+    }
+    order.set(orderData).save().then((res)=>{
+      wx.showToast({
+        title: 'order sent!',
+        icon:'success',
+        duration:2000,
+        mask: true
       })
     })
-    
-  },
-
+  }, 
+   
   onLoad: function (options) {
-    this.setData({
-      // restaurantId: options.id,
-      currentUser: app.globalData.userInfo
-    })
+    let tableName = "products";
+    let Products = new wx.BaaS.TableObject(tableName);
+    Products.find().then((res) =>{
+      console.log('res', res);
+      this.setData({
+        products: res.data.objects
+      })
+    });
   },
 
   /**
