@@ -1,0 +1,11 @@
+<!--pages/products/index.wxml-->
+<view class="h1">Choose a gift card!</view>
+
+<block wx:for="{{cards}}" wx:for-item="card">
+	<!-- card details -->
+  <view class="card-product">
+  <view class="card-product-infos" data-name="{{card}}" class="order" bindtap="selectCard">
+    <view class="h2">{{card}}</view>
+  </view>
+  </view>
+</block>

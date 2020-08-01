@@ -106,6 +106,19 @@
 					"pathName": "pages/products/products",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "carts",
+					"pathName": "pages/carts/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "gift cards",
+					"pathName": "pages/products/index",
+					"scene": null
 				}
 			]
 		}

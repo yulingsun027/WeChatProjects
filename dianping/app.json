@@ -5,7 +5,9 @@
     "pages/restaurant/detail",
     "pages/profile/index",
     "pages/comment/comment",
-    "pages/products/products"
+    "pages/products/products",
+    "pages/carts/index",
+    "pages/products/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,8 +18,8 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/products/products",
-        "text": "products"
+        "pagePath": "pages/products/index",
+        "text": "gifts"
       },
       {
         "pagePath": "pages/profile/index",

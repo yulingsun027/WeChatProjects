@@ -1,0 +1,26 @@
+/* pages/products/index.wxss */
+.h1{
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+}
+.cards { /* contains card-products */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+.card-product {
+  flex-basis: 45%;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-image: url('https://i.etsystatic.com/6678603/r/il/17e30e/1665903210/il_fullxfull.1665903210_99hj.jpg');
+  background-size: cover;
+  height: 150px;
+  width:150px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}

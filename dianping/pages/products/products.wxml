@@ -1,27 +1,31 @@
 <!--pages/products/products.wxml-->
-<view class="h1">Here are our star products</view>
 
+<view class="card">
+    <view class="card-name">{{cardName}}</view>
+</view>
+<view class="h1">Choose your gifts!</view>
 <view class="container">
-<view wx:for="{{products}}" wx:key="id" data-id="{{item.id}}" bindtap="showDetail"> 
-<view class="product-card">
-<view class="left">
-  <view class="name">{{item.name}}</view>
-  <view class="price">{{item.price}}$USD</view>
-</view>
-<view class="right">
-  <view class="points" item-id="item.id">{{item.points}} points</view>
-  <view class="btn"><button bindtap="createOrder">order</button></view>
-</view>
-</view>
-
-<!-- <van-card
-  title="{{item.name}}"
-  price="{{item.price}}"
-  desc="{{item.points}} points"
->
-  <view slot="footer">
-    <van-button size="mini" bindtap="orderProduct">order</van-button>
+  <view wx:for="{{products}}"> 
+    <view class="product-card">
+      <view class="left">
+        <view class="name">{{item.name}}</view>
+      <!-- <view class="price">{{item.price}}$USD</view> -->
+        <view class="p">{{ item.price > 0 ? item.price : -item.points }} {{ item.price > 0 ? "Kuai" : "Points" }}</view>
+        <view class="points">{{item.points}} points</view>
+      </view>
+    <view class="right">
+      
+      <view class='quantity'>
+        <view data-id="{{product.id}}" class="plus" bindtap="addProduct"> + </view>
+        <view data-id="{{product.id}}" class="minus" bindtap="minusProduct"> - </view>
+      </view>
+      <view class="btn"><button bindtap="createOrder" data-id="{{item.id}}">order</button></view>
+    </view>
   </view>
-</van-card>-->
-</view>
- </view>
+  </view>
+  </view>
+
+<!-- redeem section -->
+
+
+

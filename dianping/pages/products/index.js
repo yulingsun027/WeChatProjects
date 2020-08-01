@@ -1,32 +1,32 @@
-// pages/profile/index.js
-let app = getApp();
-
+// pages/products/index.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    currentUser:{},
+    cards: [ 
+      "我爱你",
+      "谢谢你",
+      "祝贺你",
+      "生日快乐"
+    ]
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  userInfoHandler: function(data){
-    wx.BaaS.auth.loginWithWechat(data).then(user =>{
-      console.log('user', user);
-      app.globalData.userInfo = user;
-      wx.setStorageSync('userInfo', user);
-      this.setData({
-        currentUser: user
-      })
+  selectCard: function(e){
+    console.log('select card',e);
+    let name = e.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: `/pages/products/products?cardName=${name}`,
     })
-    
   },
+ 
 
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -40,10 +40,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.setData({
-      // restaurantId: options.id,
-      currentUser: app.globalData.userInfo,
-    });
+
   },
 
   /**

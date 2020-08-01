@@ -11,4 +11,7 @@
 <view class="welcome">Welcome!</view>
 <view class="nickname">{{currentUser.nickname}}</view>
 <image class="avatar" src="{{currentUser.avatar}}"></image>
+
+<view class="points">You have {{currentUser.points}} points in your account!</view>
+<view class="points">{{currentUser.city}}</view>
 </view>

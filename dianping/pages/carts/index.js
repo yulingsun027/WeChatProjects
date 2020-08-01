@@ -1,32 +1,18 @@
-// pages/profile/index.js
-let app = getApp();
-
+// pages/carts/carts.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    currentUser:{},
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  userInfoHandler: function(data){
-    wx.BaaS.auth.loginWithWechat(data).then(user =>{
-      console.log('user', user);
-      app.globalData.userInfo = user;
-      wx.setStorageSync('userInfo', user);
-      this.setData({
-        currentUser: user
-      })
-    })
-    
-  },
-
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -40,10 +26,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.setData({
-      // restaurantId: options.id,
-      currentUser: app.globalData.userInfo,
-    });
+
   },
 
   /**
